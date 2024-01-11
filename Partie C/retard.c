@@ -111,17 +111,18 @@ Fonction qui affiche la reprogrammation des vols retardes
 void afficherReprogrammation(Vol *vols, int taille, int heureActuelle){
     if ( heureActuelle >= 600 && heureActuelle <=2200 ){
         //on affiche seulement le numero du vol, l'heure a laquelle il est sence décolle, la compagnie, son etat de vol
-        printf("\n| Numero de vol | Heure decollage reprogramme | Compagnie | Etat vol |\n");
-        printf("------------------------------------------------------------------------------------------\n");
+        printf("--------------------------------------------------------------------------------------\n");
+        printf("| Numero de vol  | Heure decollage attendue   |    Compagnie      |     Etat vol     |\n");
+        printf("--------------------------------------------------------------------------------------\n");
         for(int i = 0; i < taille ; i++){
         if (vols[i].heure_decollage >= heureActuelle && strcmp(vols[i].etat_vol, "A l'heure") == 1) {
-                printf("|      %-7d  |           %-10d     | %-16s  | %-15s |\n",
+                printf("| %7d        |       %-10d           | %-16s  | %-16s |\n",
                        vols[i].numeroVol,
                        vols[i].heure_decollage,
                        vols[i].compagnie,
                        vols[i].etat_vol
                 );
-                printf("------------------------------------------------------------------------------------------\n");
+        printf("--------------------------------------------------------------------------------------\n");
             }
         }
     }else {
